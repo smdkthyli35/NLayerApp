@@ -15,6 +15,6 @@ namespace NLayer.Core.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public ICollection<ProductFeature> ProductFeatures { get; set; }
+        public ProductFeature ProductFeature { get; set; }
     }
 }
