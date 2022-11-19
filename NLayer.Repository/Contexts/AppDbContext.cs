@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NLayer.Core.Models;
+using NLayer.Repository.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,10 @@ namespace NLayer.Repository.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.Entity<ProductFeature>().HasData(
+                new ProductFeature() { Id = 1, Color = "Kırmızı", Height = 100, Width = 200, ProductId = 1 },
+                new ProductFeature() { Id = 2, Color = "Mavi", Height = 300, Width = 500, ProductId = 2 });
 
             base.OnModelCreating(modelBuilder);
         }
