@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NLayer.Core.DTOs;
 
 namespace NLayer.Web.Controllers
 {
@@ -7,6 +8,17 @@ namespace NLayer.Web.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error(ErrorViewModel errorViewModel)
+        {
+            return View(errorViewModel);
         }
     }
 }
